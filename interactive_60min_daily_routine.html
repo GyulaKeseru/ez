@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60-Minute Interactive Daily Routine Lesson</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; line-height: 1.6; }
+        h1, h2 { color: #333; }
+        .section { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #ccc; }
+        .question { font-weight: bold; margin-top: 15px; }
+        .options label { display: block; margin-top: 5px; }
+        .feedback { margin-top: 10px; font-weight: bold; color: green; }
+        textarea { width: 100%; height: 50px; margin-top: 10px; }
+        button { margin-top: 10px; padding: 10px; cursor: pointer; }
+    </style>
+    <script>
+        function checkAnswer(questionId, correctAnswer) {
+            var selected = document.querySelector('input[name="' + questionId + '"]:checked');
+            var feedback = document.getElementById(questionId + "-feedback");
+            if (selected) {
+                if (selected.value === correctAnswer) {
+                    feedback.innerHTML = "✅ Correct!";
+                } else {
+                    feedback.innerHTML = "❌ Try again!";
+                }
+            } else {
+                feedback.innerHTML = "Please select an answer.";
+            }
+        }
+        
+        function submitResponse(id) {
+            var inputValues = document.getElementById(id).value.trim();
+            var feedback = document.getElementById(id + "-feedback");
+            if (inputValues) {
+                feedback.innerHTML = "✅ Saved!";
+            } else {
+                feedback.innerHTML = "❌ Please enter something.";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>60-Minute Interactive Daily Routine Lesson</h1>
+
+    <!-- Bemelegítés -->
+    <div class="section">
+        <h2>1. Bemelegítés (10 perc)</h2>
+        <p class="question">What time do you usually wake up?</p>
+        <textarea id="wake-up-answer"></textarea>
+        <button onclick="submitResponse('wake-up-answer')">Submit</button>
+        <p class="feedback" id="wake-up-answer-feedback"></p>
+
+        <p class="question">What is your favorite part of the day? Why?</p>
+        <textarea id="favorite-part"></textarea>
+        <button onclick="submitResponse('favorite-part')">Submit</button>
+        <p class="feedback" id="favorite-part-feedback"></p>
+    </div>
+
+    <!-- Olvasás és szövegértés -->
+    <div class="section">
+        <h2>2. Olvasás és szövegértés (15 perc)</h2>
+        <p><strong>Read the text:</strong></p>
+        <blockquote>
+            Every morning, I wake up at 7:00 AM. I brush my teeth, take a shower, and eat breakfast. 
+            Then, I go to work at 8:30 AM. In the afternoon, I have lunch at 1:00 PM and finish work at 5:00 PM.
+            In the evening, I relax, watch TV, and sometimes read a book before going to bed at 10:30 PM.
+        </blockquote>
+
+        <p class="question">What does he do at 1:00 PM?</p>
+        <div class="options">
+            <label><input type="radio" name="q1" value="a"> He goes to work.</label>
+            <label><input type="radio" name="q1" value="b"> He has lunch.</label>
+            <label><input type="radio" name="q1" value="c"> He reads a book.</label>
+        </div>
+        <button onclick="checkAnswer('q1', 'b')">Check</button>
+        <p class="feedback" id="q1-feedback"></p>
+    </div>
+
+    <!-- Nyelvtani gyakorlat -->
+    <div class="section">
+        <h2>3. Nyelvtani gyakorlatok (10 perc)</h2>
+        <p class="question">Choose the correct word: "I always _____ breakfast at 7:00 AM."</p>
+        <div class="options">
+            <label><input type="radio" name="q2" value="a"> eats</label>
+            <label><input type="radio" name="q2" value="b"> eat</label>
+            <label><input type="radio" name="q2" value="c"> eating</label>
+        </div>
+        <button onclick="checkAnswer('q2', 'b')">Check</button>
+        <p class="feedback" id="q2-feedback"></p>
+    </div>
+
+    <!-- Szókincsfejlesztő játék -->
+    <div class="section">
+        <h2>4. Name 3 Things Game (10 perc)</h2>
+        <p class="question">Name 3 things you do in the morning:</p>
+        <textarea id="name-3-morning"></textarea>
+        <button onclick="submitResponse('name-3-morning')">Submit</button>
+        <p class="feedback" id="name-3-morning-feedback"></p>
+    </div>
+
+    <!-- Szituációs beszédgyakorlat -->
+    <div class="section">
+        <h2>5. Szituációs beszédgyakorlat (10 perc)</h2>
+        <p class="question">Imagine you are telling a friend about your daily routine. Write 5 sentences.</p>
+        <textarea id="daily-routine-story"></textarea>
+        <button onclick="submitResponse('daily-routine-story')">Submit</button>
+        <p class="feedback" id="daily-routine-story-feedback"></p>
+    </div>
+
+    <!-- Kvíz és összegzés -->
+    <div class="section">
+        <h2>6. Daily Routine Quiz (15 perc)</h2>
+        <p class="question">Why do people use an alarm clock?</p>
+        <div class="options">
+            <label><input type="radio" name="q3" value="a"> To watch TV.</label>
+            <label><input type="radio" name="q3" value="b"> To wake up in the morning.</label>
+            <label><input type="radio" name="q3" value="c"> To cook breakfast.</label>
+        </div>
+        <button onclick="checkAnswer('q3', 'b')">Check</button>
+        <p class="feedback" id="q3-feedback"></p>
+    </div>
+
+</body>
+</html>
