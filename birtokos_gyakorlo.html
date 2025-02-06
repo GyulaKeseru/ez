@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birtokos szerkezet gyakorlás</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .logo {
+            margin-top: 20px;
+        }
+        .logo img {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        .question {
+            margin: 10px 0;
+            text-align: left;
+        }
+        select {
+            padding: 5px;
+            font-size: 16px;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="logo">
+    <img src="logo_500x250.png" alt="Logo" />
+</div>
+
+<div class="container">
+    <h2>Birtokos szerkezet gyakorlás</h2>
+
+    <div class="question">
+        1. The car <select id="q1" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> colour is red.
+        <span id="a1"></span>
+    </div>
+
+    <div class="question">
+        2. The dog <select id="q2" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> tail is wagging.
+        <span id="a2"></span>
+    </div>
+
+    <div class="question">
+        3. They <select id="q3" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> a new car.
+        <span id="a3"></span>
+    </div>
+
+    <div class="question">
+        4. The teacher <select id="q4" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> desk is clean.
+        <span id="a4"></span>
+    </div>
+
+    <div class="question">
+        5. Sarah <select id="q5" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> dog is very cute.
+        <span id="a5"></span>
+    </div>
+
+    <div class="question">
+        6. The house <select id="q6" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> roof is leaking.
+        <span id="a6"></span>
+    </div>
+
+    <div class="question">
+        7. The sound <select id="q7" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> the bell is loud.
+        <span id="a7"></span>
+    </div>
+
+    <div class="question">
+        8. The teacher <select id="q8" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> book is on the table.
+        <span id="a8"></span>
+    </div>
+
+    <div class="question">
+        9. The flavour <select id="q9" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> the cake is chocolate.
+        <span id="a9"></span>
+    </div>
+
+    <div class="question">
+        10. The cat <select id="q10" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> whiskers are long.
+        <span id="a10"></span>
+    </div>
+
+    <div class="question">
+        11. The top <select id="q11" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> the mountain is snowy.
+        <span id="a11"></span>
+    </div>
+
+    <div class="question">
+        12. The wheels <select id="q12" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> the bike are spinning.
+        <span id="a12"></span>
+    </div>
+
+    <div class="question">
+        13. The pages <select id="q13" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> the book are torn.
+        <span id="a13"></span>
+    </div>
+
+    <div class="question">
+        14. The light <select id="q14" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> the room is dim.
+        <span id="a14"></span>
+    </div>
+
+    <div class="question">
+        15. The taste <select id="q15" title="Válassz a birtokos szerkezethez">
+            <option value="">-- Válassz --</option>
+            <option value="'s">'s</option>
+            <option value="have">have</option>
+            <option value="of">of</option>
+        </select> the soup is spicy.
+        <span id="a15"></span>
+    </div>
+
+    <button onclick="checkAnswers()">Ellenőrzés</button>
+</div>
+
+<div id="explanation" style="margin-top: 20px; display: none;">
+    <h3>Birtokos szerkezet magyarázata:</h3>
+    <p><strong>'s</strong>: Az élőlények vagy személyek birtoklásának kifejezésére használjuk. Például: "John's book" (John könyve).</p>
+    <p><strong>have</strong>: A birtoklás kifejezésére használjuk, amikor valakinek van valamije. Például: "I have a car" (Van egy autóm).</p>
+    <p><strong>of</strong>: Élettelen tárgyak birtoklásának kifejezésére használjuk. Például: "The colour of the sky" (Az ég színe).</p>
+</div>
+
+<script>
+    function checkAnswers() {
+        const answers = {
+            q1: "'s",
+            q2: "'s",
+            q3: "have",
+            q4: "'s",
+            q5: "'s",
+            q6: "'s",
+            q7: "of",
+            q8: "'s",
+            q9: "of",
+            q10: "'s",
+            q11: "of",
+            q12: "of",
+            q13: "of",
+            q14: "of",
+            q15: "of"
+        };
+
+        for (let i = 1; i <= 15; i++) {
+            let userAnswer = document.getElementById(`q${i}`).value;
+            let answerSpan = document.getElementById(`a${i}`);
+
+            if (userAnswer === answers[`q${i}`]) {
+                answerSpan.textContent = " ✔️";
+                answerSpan.className = "correct";
+            } else {
+                answerSpan.textContent = " ❌ (Helyes válasz: " + answers[`q${i}`] + ")";
+                answerSpan.className = "incorrect";
+            }
+        }
+
+        // Magyarázat megjelenítése
+        document.getElementById('explanation').style.display = 'block';
+    }
+
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
+</script>
+
+    <footer class="footer">
+        <p>English Zone Nyelvstúdió tulajdona! Készítette: Keserű Gyula.</p>
+    </footer>
+</body>
+</html>

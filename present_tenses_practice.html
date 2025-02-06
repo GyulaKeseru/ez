@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Present Simple és Present Continuous Gyakorlás</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .logo {
+            margin-top: 20px;
+        }
+        .logo img {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        .question {
+            margin: 10px 0;
+            text-align: left;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="logo">
+    <img src="logo_500x250.png" alt="Logo" />
+</div>
+
+<div class="container">
+    <h2>Present Simple és Present Continuous Gyakorlás</h2>
+
+    <div class="question">
+        1. She <select id="q1" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) works</option>
+            <option value="b">b) is working</option>
+            <option value="c">c) work</option>
+        </select> every day.
+        <span id="a1"></span>
+    </div>
+
+    <div class="question">
+        2. They <select id="q2" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) are playing</option>
+            <option value="b">b) play</option>
+            <option value="c">c) plays</option>
+        </select> football now.
+        <span id="a2"></span>
+    </div>
+
+    <div class="question">
+        3. He <select id="q3" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) doesn't like</option>
+            <option value="b">b) don't like</option>
+            <option value="c">c) isn't liking</option>
+        </select> coffee.
+        <span id="a3"></span>
+    </div>
+
+    <div class="question">
+        4. <select id="q4" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) Is she reading</option>
+            <option value="b">b) Does she read</option>
+            <option value="c">c) She reads</option>
+        </select> a book right now?
+        <span id="a4"></span>
+    </div>
+
+    <div class="question">
+        5. We <select id="q5" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) aren't going</option>
+            <option value="b">b) don't go</option>
+            <option value="c">c) doesn't go</option>
+        </select> to the party.
+        <span id="a5"></span>
+    </div>
+
+    <div class="question">
+        6. I <select id="q6" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) am eating</option>
+            <option value="b">b) eat</option>
+            <option value="c">c) eats</option>
+        </select> breakfast now.
+        <span id="a6"></span>
+    </div>
+
+    <div class="question">
+        7. You <select id="q7" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) are sleeping</option>
+            <option value="b">b) sleep</option>
+            <option value="c">c) sleeps</option>
+        </select> at the moment.
+        <span id="a7"></span>
+    </div>
+
+    <div class="question">
+        8. We <select id="q8" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) don't watch</option>
+            <option value="b">b) aren't watching</option>
+            <option value="c">c) doesn't watch</option>
+        </select> TV every day.
+        <span id="a8"></span>
+    </div>
+
+    <div class="question">
+        9. <select id="q9" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) Does he play</option>
+            <option value="b">b) Is he playing</option>
+            <option value="c">c) He plays</option>
+        </select> the guitar now?
+        <span id="a9"></span>
+    </div>
+
+    <div class="question">
+        10. They <select id="q10" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) are not coming</option>
+            <option value="b">b) don't come</option>
+            <option value="c">c) doesn't come</option>
+        </select> to the meeting.
+        <span id="a10"></span>
+    </div>
+
+    <div class="question">
+        11. She <select id="q11" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) is cooking</option>
+            <option value="b">b) cooks</option>
+            <option value="c">c) cook</option>
+        </select> dinner right now.
+        <span id="a11"></span>
+    </div>
+
+    <div class="question">
+        12. He <select id="q12" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) doesn't read</option>
+            <option value="b">b) don't read</option>
+            <option value="c">c) isn't reading</option>
+        </select> books often.
+        <span id="a12"></span>
+    </div>
+
+    <div class="question">
+        13. <select id="q13" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) Are you listening</option>
+            <option value="b">b) Do you listen</option>
+            <option value="c">c) You listen</option>
+        </select> to music now?
+        <span id="a13"></span>
+    </div>
+
+    <div class="question">
+        14. We <select id="q14" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) are not studying</option>
+            <option value="b">b) don't study</option>
+            <option value="c">c) doesn't study</option>
+        </select> at the moment.
+        <span id="a14"></span>
+    </div>
+
+    <div class="question">
+        15. They <select id="q15" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) are visiting</option>
+            <option value="b">b) visit</option>
+            <option value="c">c) visits</option>
+        </select> their grandparents now.
+        <span id="a15"></span>
+    </div>
+
+    <div class="question">
+        16. I <select id="q16" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) am not working</option>
+            <option value="b">b) don't work</option>
+            <option value="c">c) doesn't work</option>
+        </select> today.
+        <span id="a16"></span>
+    </div>
+
+    <div class="question">
+        17. She <select id="q17" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) is not singing</option>
+            <option value="b">b) doesn't sing</option>
+            <option value="c">c) don't sing</option>
+        </select> now.
+        <span id="a17"></span>
+    </div>
+
+    <div class="question">
+        18. He <select id="q18" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) is running</option>
+            <option value="b">b) runs</option>
+            <option value="c">c) run</option>
+        </select> in the park now.
+        <span id="a18"></span>
+    </div>
+
+    <div class="question">
+        19. <select id="q19" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) Do they eat</option>
+            <option value="b">b) Are they eating</option>
+            <option value="c">c) They eat</option>
+        </select> lunch now?
+        <span id="a19"></span>
+    </div>
+
+    <div class="question">
+        20. We <select id="q20" title="Válassz a megfelelő igeidőt">
+            <option value="">-- Válassz --</option>
+            <option value="a">a) are not playing</option>
+            <option value="b">b) don't play</option>
+            <option value="c">c) doesn't play</option>
+        </select> games now.
+        <span id="a20"></span>
+    </div>
+
+    <button onclick="checkAnswers()">Ellenőrzés</button>
+</div>
+
+<div id="explanation" style="margin-top: 20px; display: none;">
+    <h3>Igeidők magyarázata:</h3>
+    <p><strong>Present Simple</strong>: Ezt az igeidőt általános igazságok, szokások és ismétlődő események kifejezésére használjuk.</p>
+    <ul>
+        <li>Például: "She works every day." (Minden nap dolgozik.)</li>
+        <li>"The sun rises in the east." (A nap keleten kel fel.)</li>
+        <li>"I usually drink coffee in the morning." (Általában kávét iszom reggel.)</li>
+    </ul>
+    <p><strong>Present Continuous</strong>: Ezt az igeidőt a jelen pillanatban zajló cselekvések vagy ideiglenes helyzetek kifejezésére használjuk.</p>
+    <ul>
+        <li>Például: "She is working right now." (Éppen most dolgozik.)</li>
+        <li>"They are playing football at the moment." (Éppen fociznak.)</li>
+        <li>"I am reading a book." (Éppen egy könyvet olvasok.)</li>
+    </ul>
+</div>
+
+<script>
+    function checkAnswers() {
+        const answers = {
+            q1: "a",
+            q2: "a",
+            q3: "a",
+            q4: "a",
+            q5: "b",
+            q6: "a",
+            q7: "a",
+            q8: "b",
+            q9: "b",
+            q10: "a",
+            q11: "a",
+            q12: "a",
+            q13: "a",
+            q14: "a",
+            q15: "a",
+            q16: "a",
+            q17: "a",
+            q18: "a",
+            q19: "b",
+            q20: "a"
+        };
+
+        for (let i = 1; i <= 20; i++) {
+            let userAnswer = document.getElementById(`q${i}`).value;
+            let answerSpan = document.getElementById(`a${i}`);
+
+            if (userAnswer === answers[`q${i}`]) {
+                answerSpan.textContent = " ✔️";
+                answerSpan.className = "correct";
+            } else {
+                answerSpan.textContent = " ❌ (Helyes válasz: " + answers[`q${i}`] + ")";
+                answerSpan.className = "incorrect";
+            }
+        }
+
+        // Magyarázat megjelenítése
+        document.getElementById('explanation').style.display = 'block';
+    }
+
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
+</script>
+
+    <footer class="footer">
+        <p>English Zone Nyelvstúdió tulajdona! Készítette: Keserű Gyula.</p>
+    </footer>
+</body>
+</html> 
