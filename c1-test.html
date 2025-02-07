@@ -64,6 +64,33 @@
         }
     </script>
 </head>
+<!-- Email küldő gomb -->
+<h2>Send Your Test Results</h2>
+<p>Enter your name and email to receive a copy of your test results.</p>
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Your Email" required>
+<button onclick="sendEmail()">Send Test Results</button>
+
+<!-- EmailJS script betöltése -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    function sendEmail() {
+        emailjs.init("Gmail"); // <-- EmailJS User ID
+
+        let params = {
+            user_name: document.getElementById("name").value,
+            user_email: document.getElementById("email").value,
+            test_results: document.body.innerHTML // Küldjük az egész HTML oldalt
+        };
+
+        emailjs.send("service_nh8tg98", "template_p5r7ud7", params)
+        .then(function(response) {
+            alert("E-mail sikeresen elküldve!");
+        }, function(error) {
+            alert("Hiba történt: " + error.text);
+        });
+    }
+</script>
 <body>
 
 <div class="container">
