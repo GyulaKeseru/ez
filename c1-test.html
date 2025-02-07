@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C1 Reading Test - Kilian Jornet</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; padding: 20px; }
+        h1, h2 { color: #2E3A87; }
+        .container { max-width: 800px; margin: auto; }
+        .question { margin-bottom: 10px; }
+        input[type="text"], select { padding: 5px; margin: 5px; }
+        button { padding: 10px; background: #2E3A87; color: white; border: none; cursor: pointer; }
+        button:hover { background: #1E2A67; }
+        .correct { background-color: #c8e6c9 !important; }
+        .incorrect { background-color: #ffcccb !important; }
+    </style>
+    <script>
+        function submitTest() {
+            let matchingAnswers = {
+                "1": "g", "2": "f", "3": "a", "4": "h", "5": "d", "6": "b", "7": "e", "8": "c"
+            };
+            let fillInTheBlanksAnswers = ["3500", "17", "1.5", "13", "18", "33"];
+            let multipleChoiceAnswers = ["d", "b", "a", "c", "a", "d"];
+            let matchingScore = 0;
+            let fillInTheBlanksScore = 0;
+            let multipleChoiceScore = 0;
+
+            // Matching answers check
+            for (let i = 1; i <= 8; i++) {
+                let selected = document.getElementById('vocab' + i).value;
+                if (selected.toLowerCase() === matchingAnswers[i]) {
+                    matchingScore++;
+                    document.getElementById('vocab' + i).classList.add('correct');
+                } else {
+                    document.getElementById('vocab' + i).classList.add('incorrect');
+                }
+            }
+
+            // Fill in the blanks check
+            for (let i = 0; i < fillInTheBlanksAnswers.length; i++) {
+                let input = document.getElementById("blank" + (i + 1)).value.trim();
+                if (input === fillInTheBlanksAnswers[i]) {
+                    fillInTheBlanksScore++;
+                    document.getElementById("blank" + (i + 1)).classList.add('correct');
+                } else {
+                    document.getElementById("blank" + (i + 1)).classList.add('incorrect');
+                }
+            }
+
+            // Multiple choice check
+            for (let i = 1; i <= multipleChoiceAnswers.length; i++) {
+                let selected = document.querySelector(`input[name="q${i}"]:checked`);
+                let questionElement = document.getElementById("question" + i);
+                if (selected && selected.value === multipleChoiceAnswers[i - 1]) {
+                    multipleChoiceScore++;
+                    questionElement.classList.add('correct');
+                } else {
+                    questionElement.classList.add('incorrect');
+                }
+            }
+
+            alert(`Matching score: ${matchingScore}/8\nFill in the blanks score: ${fillInTheBlanksScore}/6\nMultiple choice score: ${multipleChoiceScore}/6`);
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Reading: C1 - A Biography of Kilian Jornet</h1>
+    <p><i>© 2019 British Council www.britishcouncil.org/learnenglish</i></p>
+    <p>Read a biography of mountain runner Kilian Jornet, who climbed Everest in a day, to practise
+        and improve your reading skills.</p>
+
+    <h2>Before reading</h2>
+    <p>Do the preparation task first. Then read the text and do the exercises</p>
+
+    <h2>Preparation task</h2>
+    <p>Match the definitions (a–h) with the vocabulary (1–8).</p>
+    <table class="vocab-table">
+        <tr>
+            <td>
+                <ol>
+                    <li>Kidneys <select id="vocab1" title="Kidneys"> <option value="">Select</option>
+                        <option value="a">a</option> <option value="b">b</option> <option value="c">c</option>
+                        <option value="d">d</option> <option value="e">e</option> <option value="f">f</option>
+                        <option value="g">g</option> <option value="h">h</option></select></li>
+                    <li>Endurance <select id="vocab2" title="Endurance"> <option value="">Select</option> 
+                        <option value="a">a</option> <option value="b">b</option> <option value="c">c</option> 
+                        <option value="d">d</option> <option value="e">e</option> <option value="f">f</option> 
+                        <option value="g">g</option> <option value="h">h</option></select></li>
+                    <li>To scale <select id="vocab3" title="To scale"> <option value="">Select</option> 
+                        <option value="a">a</option> <option value="b">b</option> <option value="c">c</option> 
+                        <option value="d">d</option> <option value="e">e</option> <option value="f">f</option> 
+                        <option value="g">g</option> <option value="h">h</option></select></li>
+                    <li>Breathless <select id="vocab4" title="Breathless"> <option value="">Select</option> 
+                        <option value="a">a</option> <option value="b">b</option> <option value="c">c</option> 
+                        <option value="d">d</option> <option value="e">e</option> <option value="f">f</option> 
+                        <option value="g">g</option> <option value="h">h</option></select></li>
+                    <li>A hike <select id="vocab5" title="A hike"> <option value="">Select</option> 
+                        <option value="a">a</option> <option value="b">b</option> <option value="c">c</option> 
+                        <option value="d">d</option> <option value="e">e</option> <option value="f">f</option> 
+                        <option value="g">g</option> <option value="h">h</option></select></li>
+                    <li>A Sherpa <select id="vocab6" title="A Sherpa"> <option value="">Select</option> 
+                        <option value="a">a</option> <option value="b">b</option> <option value="c">c</option> 
+                        <option value="d">d</option> <option value="e">e</option> <option value="f">f</option> 
+                        <option value="g">g</option> <option value="h">h</option></select></li>
+                    <li>An ascent <select id="vocab7" title="An ascent"> <option value="">Select</option> 
+                        <option value="a">a</option> <option value="b">b</option> <option value="c">c</option> 
+                        <option value="d">d</option> <option value="e">e</option> <option value="f">f</option> 
+                        <option value="g">g</option> <option value="h">h</option></select></li>
+                    <li>Altitude <select id="vocab8" title="Altitude"> <option value="">Select</option> 
+                        <option value="a">a</option> <option value="b">b</option> <option value="c">c</option> 
+                        <option value="d">d</option> <option value="e">e</option> <option value="f">f</option> 
+                        <option value="g">g</option> <option value="h">h</option></select></li>
+                </ol>
+            </td>
+            <td>
+                <ol type="a">
+                    <li>to climb to the top of something</li>
+                    <li>a mountain guide from the Himalaya mountains</li>
+                    <li>the height of a place above sea level</li>
+                    <li>a long, hard walk</li>
+                    <li>a climb up a mountain or other object</li>
+                    <li>the ability to do something difficult for a long time</li>
+                    <li>two organs in the body that process liquid waste</li>
+                    <li>not breathing easily</li>
+                </ol>
+            </td>
+        </tr>
+    </table>
+    
+
+    <h2>Reading Text: A biography of Kilian Jornet</h2>
+    <p>When you picture mountain climbers scaling Mount Everest, what probably comes to mind are
+        teams of climbers with Sherpa guides leading them to the summit, equipped with oxygen
+        masks, supplies and tents. And in most cases you’d be right, as 97 per cent of climbers use
+        oxygen to ascend to Everest’s summit at 8,850 metres above sea level. The thin air at high
+        altitudes makes most people breathless at 3,500 metres, and the vast majority of climbers use
+        oxygen past 7,000 metres. A typical climbing group will have 8–15 people in it, with an almost
+        equal number of guides, and they’ll spend weeks to get to the top after reaching Base Camp.
+        But ultra-distance and mountain runner Kilian Jornet Burgada ascended the mountain in May
+        2017 alone, without an oxygen mask or fixed ropes for climbing.</p>
+    <p>Oh, and he did it in 26 hours.</p>
+    <p>With food poisoning.</p>
+    <p>And then, five days later, he did it again, this time in only 17 hours.</p>
+    <p>Born in 1987, Kilian has been training for Everest his whole life. And that really does mean his
+        whole life, as he grew up 2,000 metres above sea level in the Pyrenees in the ski resort of
+        Lles de Cerdanya in Catalonia, north-eastern Spain. While other children his age were learning
+        to walk, Kilian was on skis. At one and a half years old he did a five-hour hike with his mother,</p>
+    <p>entirely under his own steam. He left his peers even further behind when he climbed his first
+        mountain and competed in his first cross-country ski race at age three. By age seven, he had
+        scaled a 4,000er and, at ten, he did a 42-day crossing of the Pyrenees.</p>
+    <p>He was 13 when he says he started to take it ‘seriously’ and trained with the Ski
+        Mountaineering Technical Centre (CTEMC) in Catalonia, entering competitions and working
+        with a coach. At 18, he took over his own ski-mountaineering and trail-running training, with a
+        schedule that only allows a couple of weeks of rest a year. He does as many as 1,140 hours of
+        endurance training a year, plus strength training and technical workouts as well as specific
+        training in the week before a race. For his record-breaking ascent and descent of the
+        Matterhorn, he prepared by climbing the mountain ten times until he knew every detail of it,
+        even including where the sun would be shining at every part of the day.</p>
+    <p>Sleeping only seven hours a night, Kilian Jornet seems almost superhuman. His resting
+        heartbeat is extremely low at 33 beats per minute, compared with the average man’s 60 per
+        minute or an athlete’s 40 per minute. He breathes more efficiently than average people too,
+        taking in more oxygen per breath, and he has a much faster recovery time after exercise as
+        his body quickly breaks down lactic acid – the acid in muscles that causes pain after exercise.</p>
+    <p>All this is thanks to his childhood in the mountains and to genetics, but it is his mental strength
+        that sets him apart. He often sets himself challenges to see how long he can endure difficult
+        conditions in order to truly understand what his body and mind can cope with. For example,
+        he almost gave himself kidney failure after only drinking 3.5 litres of water on a 100km run in
+        temperatures of around 40°C.</p>
+    <p>It would take a book to list all the races and awards he’s won and the mountains he’s climbed.
+        And even here, Kilian’s achievements exceed the average person as, somehow, he finds time
+        to record his career on his blog and has written three books, Run or Die, The Invisible
+        Border and Summits of My Life.</p>
+
+    <h2>Task 1 - Fill in the Blanks</h2>
+    <p>Complete the sentences with the correct numbers.</p>
+    <p>1. It’s normal to find it hard to breathe at <input type="text" id="blank1" size="5" title="Altitude in meters"> metres above sea level.</p>
+    <p>2. Kilian reached the summit of Everest in <input type="text" id="blank2" size="5" title="Time in hours"> hours on his second attempt.</p>
+    <p>3. He was <input type="text" id="blank3" size="5" title="Age in years"> years old when he walked a long way without being carried.</p>
+    <p>4. At the age of <input type="text" id="blank4" size="5" title="Age"> , he saw mountaineering as more than a hobby.</p>
+    <p>5. At age <input type="text" id="blank5" size="5" title="Age"> , he became his own trainer.</p>
+    <p>6. At <input type="text" id="blank6" size="5" title="BPM"> bpm, Kilian’s pulse rate is much slower than even very fit people.</p>
+
+    <h2>Task 2 - Multiple Choice</h2>
+    <p id="question1">1. The majority of climbers on Everest... <br>
+        <input type="radio" name="q1" value="a" title="Option a"> a. need oxygen to finish their ascent.<br>
+        <input type="radio" name="q1" value="b" title="Option b"> b. are accompanied.<br>
+        <input type="radio" name="q1" value="c" title="Option c"> c. make slow progress to the top.<br>
+        <input type="radio" name="q1" value="d" title="Option d"> d. (all of the above)<br>
+    </p>
+
+    <p id="question2">2. Kilian Jornet is unlike most Everest climbers because...<br>
+        <input type="radio" name="q2" value="a" title="Option a"> a. he is a professional climber.<br>
+        <input type="radio" name="q2" value="b" title="Option b"> b. he ascended faster.<br>
+        <input type="radio" name="q2" value="c" title="Option c"> c. he found the climb difficult.<br>
+        <input type="radio" name="q2" value="d" title="Option d"> d. (all of the above)<br>
+    </p>
+    
+    <p id="question3">3. In his training now, Kilian … <br>
+        <input type="radio" name="q3" value="a" title="Option a"> a. demands a lot of himself.<br>
+        <input type="radio" name="q3" value="b" title="Option b"> b. takes a lot of rest periods.<br>
+        <input type="radio" name="q3" value="c" title="Option c"> c. uses a coach.<br>
+        <input type="radio" name="q3" value="d" title="Option d"> d. (none of the above)<br>
+    </p>
+    
+    <p id="question4">4. Kilian partly owes his incredible fitness to … <br>
+        <input type="radio" name="q4" value="a" title="Option a"> a. the way he makes extra time for sleep.<br>
+        <input type="radio" name="q4" value="b" title="Option b"> b. his ability to recover from injury.<br>
+        <input type="radio" name="q4" value="c" title="Option c"> c. where he grew up.<br>
+        <input type="radio" name="q4" value="d" title="Option d"> d. (all of the above)<br>
+    </p>
+
+    <p id="question5">5. His training includes … <br>
+        <input type="radio" name="q5" value="a" title="Option a"> a. psychological preparation.<br>
+        <input type="radio" name="q5" value="b" title="Option b"> b. making sure he drinks enough water.<br>
+        <input type="radio" name="q5" value="c" title="Option c"> c. trying to reduce his recovery time.<br>
+        <input type="radio" name="q5" value="d" title="Option d"> d. (none of the above)<br>
+    </p>
+
+    <p id="question6">6. Kilian’s books are … <br>
+        <input type="radio" name="q6" value="a" title="Option a"> a. a long list of races and awards.<br>
+        <input type="radio" name="q6" value="b" title="Option b"> b. discouraging to average people.<br>
+        <input type="radio" name="q6" value="c" title="Option c"> c. best for an expert audience.<br>
+        <input type="radio" name="q6" value="d" title="Option d"> d. another example of his impressive accomplishments.<br>
+    </p>
+
+    <div><button onclick="submitTest()">Elküldés</button></div>
+
+    <h2>Discussion</h2>
+    <p>What physical challenges would you like to train for?</p>
+    <textarea rows="4" cols="50" title="Discussion"></textarea>
+    
+
+</div>
+</body>
+</html>
